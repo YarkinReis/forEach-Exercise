@@ -77,17 +77,19 @@ function vowelCount(str){
     let splitStr = str.split("");
     let obj = {};
     const vowels = "aeiou";
-    splitStr.forEach(function(word){
-        let lowerCased = word.toLowerCase();
+    splitStr.forEach(function(letter){
+        let lowerCased = letter.toLowerCase();
         if(vowels.indexOf(lowerCased) !== -1){
-            if(obj[lowerCased]){
+            if(obj[lowerCased] === undefined){
+                obj[lowerCased] = 1;
+            } else {
                 obj[lowerCased]++;
             }
         }
     })
    return obj;
 }
-const result = vowelCount("Hello World");
+const result = vowelCount("I don't want that");
 console.log(result);
 
 /*
@@ -98,7 +100,9 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
