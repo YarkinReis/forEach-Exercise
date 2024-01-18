@@ -101,7 +101,9 @@ Examples:
 */
 
 function doubleValuesWithMap(arr) {
-
+    return arr.map(function(val){
+        return val *2;
+    })
 }
 
 /*
@@ -113,6 +115,9 @@ Examples:
 */
 
 function valTimesIndex(arr){
+   return arr.map(function(val,index){
+        return val * index;
+    })
     
 }
 
@@ -124,6 +129,9 @@ Examples:
 */
 
 function extractKey(arr, key){
+    return arr.map(function(val){
+        return val[key];
+    })
     
 }
 
