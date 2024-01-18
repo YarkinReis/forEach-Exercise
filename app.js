@@ -7,7 +7,11 @@ Examples:
 
 */
 function doubleValues(arr){
-    
+    let newArr = [];
+    arr.forEach(function(val){
+        newArr.push(val*2);
+    })
+    return newArr;
 }
 
 /*
@@ -19,7 +23,13 @@ Examples:
 
 */
 function onlyEvenValues(arr){
-    
+    let newValues = [];
+    arr.forEach(function(val){
+        if(val % 2 === 0 ){
+            newValues.push(val);
+        }
+    })
+    return newValues;
 }
 
 /*
@@ -31,7 +41,10 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    
+    let newArr = [];
+    arr.forEach(function(char){
+        newArr.push(char[0] + char[char.length -1])
+    })
 }
 
 /*
@@ -44,7 +57,10 @@ Examples:
 
 */
 function addKeyAndValue(arr,key,value){
-    
+    arr.forEach(function(val){
+        val[key]= value;
+    })
+    return arr;
 }
 
 /*
@@ -58,8 +74,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+    let splitStr = str.split("");
+    let obj = {};
+    const vowels = "aeiou";
+    splitStr.forEach(function(word){
+        let lowerCased = word.toLowerCase();
+        if(vowels.indexOf(lowerCased) !== -1){
+            if(obj[lowerCased]){
+                obj[lowerCased]++;
+            }
+        }
+    })
+   return obj;
 }
+const result = vowelCount("Hello World");
+console.log(result);
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
