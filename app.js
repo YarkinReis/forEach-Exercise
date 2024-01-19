@@ -143,8 +143,10 @@ Examples:
 */
 
 function extractFullName(arr){
-    
-}
+    return arr.map(function(val){
+        return val.first + " " + val.last ; 
+    })
+    }
 
 /*
 Write a function called filterByValue which accepts an array of objects and a key and returns a new array with all the objects that contain that key.
